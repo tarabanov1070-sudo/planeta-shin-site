@@ -172,10 +172,7 @@ const translations = {
     proc_3_title: 'Заберіть замовлення', proc_3_text: 'Заберіть готове замовлення або домовтесь про сезонне зберігання комплекту шин.',
 
     rev_eyebrow: 'Відгуки', rev_title: 'Що кажуть клієнти',
-    rev_1_text: '«Швидко підібрали зимову резину за розміром, все було в наявності. Рекомендую!»', rev_1_author: 'Олександр К.',
-    rev_2_text: '«Залишала шини на зберігання на літо — все гаразд, зручно і не довелось шукати місце вдома.»', rev_2_author: 'Марина В.',
-    rev_3_text: '«Допомогли підібрати диски під автомобіль, привезли швидко, все за розміром.»', rev_3_author: 'Дмитро П.',
-    rev_note: 'Приклади відгуків буде замінено на реальні.',
+    rev_google_cta: '{rating} ★ · {count} відгуків на Google Картах →',
 
     contact_eyebrow: 'Контакти', contact_title: "Зв'яжіться з нами",
     contact_phone_label: 'Телефон',
@@ -245,10 +242,7 @@ const translations = {
     proc_3_title: 'Заберите заказ', proc_3_text: 'Заберите готовый заказ или договоритесь о сезонном хранении комплекта шин.',
 
     rev_eyebrow: 'Отзывы', rev_title: 'Что говорят клиенты',
-    rev_1_text: '«Быстро подобрали зимнюю резину по размеру, всё было в наличии. Рекомендую!»', rev_1_author: 'Александр К.',
-    rev_2_text: '«Оставляла шины на хранение на лето — всё в порядке, удобно и не пришлось искать место дома.»', rev_2_author: 'Марина В.',
-    rev_3_text: '«Помогли подобрать диски под автомобиль, привезли быстро, всё по размеру.»', rev_3_author: 'Дмитрий П.',
-    rev_note: 'Примеры отзывов будут заменены на реальные.',
+    rev_google_cta: '{rating} ★ · {count} отзывов в Google Картах →',
 
     contact_eyebrow: 'Контакты', contact_title: 'Свяжитесь с нами',
     contact_phone_label: 'Телефон',
@@ -283,8 +277,25 @@ const langToggle = document.getElementById('langToggle');
 const floatingCallBtn = document.querySelector('.floating__btn--call');
 const floatingViberBtn = document.querySelector('.floating__btn--viber');
 
+// Ключі з підстановками ({rating}, {count}) — генеральний цикл нижче їх не чіпає,
+// текст рахує renderReviewsNote() окремо.
+const TEMPLATED_I18N_KEYS = new Set(['rev_google_cta']);
+let currentLang = 'uk';
+// Стартові значення відповідають статичному резервному вмісту в HTML;
+// оновлюються реальними цифрами після успішного запиту до Google Places.
+let reviewStats = { rating: 4.6, count: 19 };
+
+function renderReviewsNote(dict) {
+  const el = document.querySelector('[data-i18n="rev_google_cta"]');
+  if (!el) return;
+  el.textContent = dict.rev_google_cta
+    .replace('{rating}', reviewStats.rating)
+    .replace('{count}', reviewStats.count);
+}
+
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.uk;
+  currentLang = lang;
 
   document.documentElement.lang = lang;
 
@@ -292,8 +303,10 @@ function applyLanguage(lang) {
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
+    if (TEMPLATED_I18N_KEYS.has(key)) return;
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
+  renderReviewsNote(dict);
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.dataset.i18nPlaceholder;
@@ -339,7 +352,6 @@ if (quickForm) {
   quickForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const currentLang = document.documentElement.lang === 'ru' ? 'ru' : 'uk';
     const dict = translations[currentLang];
 
     const name = document.getElementById('qfName').value.trim();
@@ -361,3 +373,71 @@ if (quickForm) {
     quickForm.reset();
   });
 }
+
+// ===== Реальні відгуки з Google Places =====
+// Ключ обмежений по HTTP-referrer в Google Cloud Console (тільки для
+// tarabanov1070-sudo.github.io), тож використати його з іншого сайту не вийде.
+const GOOGLE_PLACE_ID = 'ChIJ20WOTrv820AR9yE9OfrHrKs';
+const GOOGLE_PLACES_KEY = 'AIzaSyDA5v0rfHde1C9lsSvDAe91wJMr0hLKWsA';
+
+function reviewInitials(name) {
+  const parts = (name || '').trim().split(/\s+/).filter(Boolean);
+  const letters = parts.slice(0, 2).map((p) => p[0].toUpperCase());
+  return letters.join('') || '?';
+}
+
+function starString(rating) {
+  const full = Math.max(0, Math.min(5, Math.round(rating)));
+  return '★★★★★'.slice(0, full) + '☆☆☆☆☆'.slice(0, 5 - full);
+}
+
+function renderReviewCards(reviews) {
+  const grid = document.getElementById('reviewsGrid');
+  if (!grid || !reviews.length) return;
+
+  grid.innerHTML = reviews
+    .slice(0, 5)
+    .map((review, i) => {
+      const text = (review.originalText && review.originalText.text) || (review.text && review.text.text) || '';
+      const name = review.authorAttribution ? review.authorAttribution.displayName : '';
+      const avatarClass = i % 2 ? 'review__avatar review__avatar--dark' : 'review__avatar';
+      return `
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">${starString(review.rating)}</div>
+          <p>«${text}»</p>
+          <div class="review__footer">
+            <span class="${avatarClass}">${reviewInitials(name)}</span>
+            <div class="review__author">${name}</div>
+          </div>
+        </div>`;
+    })
+    .join('');
+}
+
+async function loadGoogleReviews() {
+  try {
+    const res = await fetch(`https://places.googleapis.com/v1/places/${GOOGLE_PLACE_ID}`, {
+      headers: {
+        'X-Goog-Api-Key': GOOGLE_PLACES_KEY,
+        'X-Goog-FieldMask': 'reviews,rating,userRatingCount',
+      },
+    });
+    if (!res.ok) throw new Error(`places api HTTP ${res.status}`);
+
+    const data = await res.json();
+    if (!data.reviews || !data.reviews.length) throw new Error('no reviews in response');
+
+    renderReviewCards(data.reviews);
+
+    if (data.rating) reviewStats.rating = data.rating;
+    if (data.userRatingCount) reviewStats.count = data.userRatingCount;
+    renderReviewsNote(translations[currentLang]);
+  } catch (err) {
+    // Живий запит не вдався (блокувальник реклами, ліміт, офлайн тощо) —
+    // лишаємо статичні (але справжні) відгуки, які вже є в HTML.
+    console.warn('Google Places reviews: fallback to static reviews —', err);
+  }
+}
+
+loadGoogleReviews();

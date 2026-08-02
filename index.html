@@ -292,37 +292,58 @@
         <h2 data-i18n="rev_title">Що кажуть клієнти</h2>
       </div>
 
-      <!-- TODO: тимчасові приклади, замінити на реальні відгуки клієнтів -->
-      <div class="grid grid--3">
+      <!-- Реальні відгуки з Google Карт (Place ID: ChIJ20WOTrv820AR9yE9OfrHrKs).
+           Статичний вміст нижче — резервний варіант на випадок, якщо живий
+           запит до Google Places API не спрацює (блокувальник реклами, ліміт тощо).
+           js/script.js при завантаженні підмінює цей блок свіжими відгуками. -->
+      <div class="grid grid--3" id="reviewsGrid">
         <div class="review">
           <span class="review__quote">”</span>
           <div class="review__stars">★★★★★</div>
-          <p data-i18n="rev_1_text">«Швидко підібрали зимову резину за розміром, все було в наявності. Рекомендую!»</p>
+          <p>«Добрий продавець, підкаже, допоможе. Замовляю запчастини вже 5 років, зауважень ніяких не було.»</p>
           <div class="review__footer">
-            <span class="review__avatar">ОК</span>
-            <div class="review__author" data-i18n="rev_1_author">Олександр К.</div>
+            <span class="review__avatar">МЛ</span>
+            <div class="review__author">Макс Лисак</div>
           </div>
         </div>
         <div class="review">
           <span class="review__quote">”</span>
           <div class="review__stars">★★★★★</div>
-          <p data-i18n="rev_2_text">«Залишала шини на зберігання на літо — все гаразд, зручно і не довелось шукати місце вдома.»</p>
+          <p>«Чудовий магазин! Швидке обслуговування, хороші ціни та професійна консультація. Допомогли підібрати все необхідне. Рекомендую»</p>
           <div class="review__footer">
-            <span class="review__avatar review__avatar--dark">МВ</span>
-            <div class="review__author" data-i18n="rev_2_author">Марина В.</div>
+            <span class="review__avatar review__avatar--dark">БС</span>
+            <div class="review__author">Богдан Сулима</div>
           </div>
         </div>
         <div class="review">
           <span class="review__quote">”</span>
           <div class="review__stars">★★★★★</div>
-          <p data-i18n="rev_3_text">«Допомогли підібрати диски під автомобіль, привезли швидко, все за розміром.»</p>
+          <p>«Декілька років купую запчастини на абсолютно різні автомобілі. Завжди підкажуть та допоможуть підібрати»</p>
           <div class="review__footer">
-            <span class="review__avatar">ДП</span>
-            <div class="review__author" data-i18n="rev_3_author">Дмитро П.</div>
+            <span class="review__avatar">АЗ</span>
+            <div class="review__author">Олексій Земляний</div>
+          </div>
+        </div>
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">★★★★★</div>
+          <p>«Супер магазин! Завжди є все що треба для авто, під замовлення та в наявності.»</p>
+          <div class="review__footer">
+            <span class="review__avatar review__avatar--dark">І</span>
+            <div class="review__author">Іван</div>
+          </div>
+        </div>
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">★★★★★</div>
+          <p>«Знайшов потрібну деталь для авто, зручно бо магазин не далеко від дому»</p>
+          <div class="review__footer">
+            <span class="review__avatar">C</span>
+            <div class="review__author">Clinds</div>
           </div>
         </div>
       </div>
-      <p class="reviews__note" data-i18n="rev_note">Приклади відгуків буде замінено на реальні.</p>
+      <p class="reviews__note" id="reviewsNote"><a href="https://www.google.com/maps/place/?q=place_id:ChIJ20WOTrv820AR9yE9OfrHrKs" target="_blank" rel="noopener"><span data-i18n="rev_google_cta">4.6 ★ · 19 відгуків на Google Картах →</span></a></p>
     </div>
   </section>
 

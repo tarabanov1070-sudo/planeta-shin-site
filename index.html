@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Планета ШИН — шини, диски та автозапчастини</title>
+<meta name="description" id="metaDescription" content="Планета ШИН — продаж шин, дисків та автозапчастин для будь-яких авто. Підбір під авто, сезонне зберігання шин. Працюємо 24/7.">
+<meta property="og:title" content="Планета ШИН — шини, диски та автозапчастини">
+<meta property="og:description" id="ogDescription" content="Продаж шин, дисків та автозапчастин для будь-яких авто. Сезонне зберігання шин. Працюємо 24/7.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230f1e33'/%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%233b82f6' stroke-width='8'/%3E%3Ccircle cx='50' cy='50' r='16' fill='none' stroke='%23fff' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Фіксований фон: фото магазину, залишається на місці під час прокрутки -->
+<div class="bg-fixed" aria-hidden="true"></div>
+
+<!-- ===== ШАПКА ===== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="logo">
+      <span class="logo__icon" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="36" height="36">
+          <circle cx="24" cy="24" r="20" fill="#0f1e33"/>
+          <circle cx="24" cy="24" r="20" fill="none" stroke="#3b82f6" stroke-width="4"/>
+          <circle cx="24" cy="24" r="7" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="24" cy="10.5" r="2" fill="#fff"/>
+          <circle cx="24" cy="37.5" r="2" fill="#fff"/>
+          <circle cx="10.5" cy="24" r="2" fill="#fff"/>
+          <circle cx="37.5" cy="24" r="2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="logo__text">Планета <b>ШИН</b></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#home" class="nav__link" data-i18n="nav_home">Головна</a>
+      <a href="#about" class="nav__link" data-i18n="nav_about">Про нас</a>
+      <a href="#services" class="nav__link" data-i18n="nav_services">Послуги</a>
+      <a href="#why" class="nav__link" data-i18n="nav_why">Переваги</a>
+      <a href="#reviews" class="nav__link" data-i18n="nav_reviews">Відгуки</a>
+      <a href="#contacts" class="nav__link" data-i18n="nav_contacts">Контакти</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="tel:+380955525256" class="header__phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>+38 (095) 552-52-56</span>
+      </a>
+      <button type="button" class="lang-toggle" id="langToggle" aria-label="UA / RU">
+        <span class="lang-toggle__opt" data-lang-opt="uk">UA</span>
+        <span class="lang-toggle__opt" data-lang-opt="ru">RU</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== ГОЛОВНИЙ ЕКРАН ===== -->
+  <section class="hero" id="home">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3.5 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero_badge">Працюємо 24/7, без вихідних</span>
+        </span>
+        <h1><span data-i18n="hero_title_main">Шини, диски та автозапчастини</span> <span data-i18n="hero_title_accent">для будь-якого автомобіля</span></h1>
+        <p class="hero__lead" data-i18n="hero_lead">Допоможемо підібрати шини й диски точно під ваш автомобіль, знайдемо потрібні
+          запчастини та приймемо комплект сезонних шин на зберігання — швидко і без зайвих запитань.</p>
+
+        <div class="hero__cta">
+          <a href="tel:+380955525256" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span data-i18n="btn_call">Подзвонити</span>
+          </a>
+          <a href="#" id="heroViberBtn" class="btn btn--viber">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>
+            <span data-i18n="btn_viber">Написати у Viber</span>
+          </a>
+        </div>
+
+        <div class="hero__perks">
+          <div class="perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 17V7a2 2 0 0 1 2-2h8l6 6v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 5v5h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span data-i18n="perk_1">Шини, диски, запчастини</span>
+          </div>
+          <div class="perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span data-i18n="perk_2">Зберігання шин</span>
+          </div>
+          <div class="perk">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.4 8.4 8 9 4.6-.6 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span data-i18n="perk_3">Допомога з підбором</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 420 420" class="tire-illustration">
+          <circle cx="210" cy="210" r="190" fill="#0e1c30"/>
+          <circle cx="210" cy="210" r="150" fill="#14263f"/>
+          <circle cx="210" cy="210" r="150" fill="none" stroke="#3b82f6" stroke-width="10"/>
+          <circle cx="210" cy="210" r="120" fill="none" stroke="#233350" stroke-width="18" stroke-dasharray="6 10"/>
+          <circle cx="210" cy="210" r="66" fill="#e7ecf3"/>
+          <circle cx="210" cy="210" r="66" fill="none" stroke="#c3cbd8" stroke-width="2"/>
+          <circle cx="210" cy="210" r="18" fill="#2563eb"/>
+          <g stroke="#c3cbd8" stroke-width="10" stroke-linecap="round">
+            <line x1="210" y1="210" x2="210" y2="154"/>
+            <line x1="210" y1="210" x2="256" y2="238"/>
+            <line x1="210" y1="210" x2="164" y2="238"/>
+          </g>
+        </svg>
+        <span class="chip chip--1" data-i18n="chip_1">Шини</span>
+        <span class="chip chip--2" data-i18n="chip_2">Диски</span>
+        <span class="chip chip--3" data-i18n="chip_3">Запчастини</span>
+        <span class="particle particle--1"></span>
+        <span class="particle particle--2"></span>
+        <span class="particle particle--3"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== СТРІЧКА КАТЕГОРІЙ ===== -->
+  <!-- Набір з 8 позицій повторено 4 рази підряд, щоб на широких екранах
+       завжди було чим заповнити стрічку без "порожнього" розриву в циклі. -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marqueeTrack"></div>
+  </section>
+
+  <!-- ===== ПРО НАС ===== -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__art">
+        <div class="about__art-frame">
+          <img src="img/shop-facade.jpg" alt="Магазин Планета ШИН — вивіска «Автозапчастини»" loading="lazy">
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="eyebrow" data-i18n="about_eyebrow">Про компанію</span>
+        <h2 data-i18n="about_title">Планета ШИН — все для ваших коліс в одному місці</h2>
+        <p data-i18n="about_text">Ми займаємось продажем шин, дисків та автозапчастин для легкових автомобілів, кросоверів
+          і вантажівок. Допомагаємо підібрати правильний розмір і варіант під ваш автомобіль та бюджет,
+          а на міжсезоння приймаємо комплект шин на зберігання — щоб він не займав місце вдома чи в гаражі.</p>
+        <ul class="about__list">
+          <li data-i18n="about_li_1">Підбір шин і дисків за параметрами автомобіля</li>
+          <li data-i18n="about_li_2">Пошук та замовлення автозапчастин</li>
+          <li data-i18n="about_li_3">Сезонне зберігання шин</li>
+          <li data-i18n="about_li_4">Консультація по телефону та в Viber — цілодобово</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ПОСЛУГИ ===== -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="svc_eyebrow">Послуги</span>
+        <h2 data-i18n="svc_title">Чим ми можемо допомогти</h2>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card">
+          <span class="card__num">01</span>
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v3.2M12 17.8V21M3 12h3.2M17.8 12H21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3 data-i18n="svc_1_title">Шини</h3>
+          <p data-i18n="svc_1_text">Літні, зимові та всесезонні шини для легкових авто, кросоверів і вантажного транспорту.
+            Підберемо за розміром, сезоном і бюджетом.</p>
+          <a href="#contacts" class="card__link" data-i18n="svc_link">Уточнити наявність →</a>
+        </div>
+
+        <div class="card">
+          <span class="card__num">02</span>
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="8.4" r="1" fill="currentColor"/><circle cx="15.6" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="15.6" r="1" fill="currentColor"/><circle cx="8.4" cy="12" r="1" fill="currentColor"/></svg>
+          </div>
+          <h3 data-i18n="svc_2_title">Диски</h3>
+          <p data-i18n="svc_2_text">Литі, ковані та штамповані диски. Допоможемо підібрати розболтовку, виліт і діаметр під ваш автомобіль.</p>
+          <a href="#contacts" class="card__link" data-i18n="svc_link">Уточнити наявність →</a>
+        </div>
+
+        <div class="card">
+          <span class="card__num">03</span>
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3 17.7 3.3l2 2-3 3 1 1 3-3 1 1c1 1-.2 2.9-1.6 4.3-1.4 1.4-3.3 2.6-4.3 1.6l-9 9c-1 1-2.6 1-3.5 0-1-1-1-2.6 0-3.5l9-9c-1-1 .2-2.9 1.6-4.3.3-.3.6-.5.8-.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 data-i18n="svc_3_title">Автозапчастини</h3>
+          <p data-i18n="svc_3_text">Оригінальні та аналогові запчастини в наявності і під замовлення для більшості марок автомобілів.</p>
+          <a href="#contacts" class="card__link" data-i18n="svc_link">Уточнити наявність →</a>
+        </div>
+
+        <div class="card">
+          <span class="card__num">04</span>
+          <div class="card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18" stroke="currentColor" stroke-width="1.7"/></svg>
+          </div>
+          <h3 data-i18n="svc_4_title">Зберігання шин</h3>
+          <p data-i18n="svc_4_text">Сезонне зберігання комплекту шин на складі — здали і забули до наступного сезону.</p>
+          <a href="#contacts" class="card__link" data-i18n="svc_link">Уточнити наявність →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ЧОМУ МИ ===== -->
+  <section class="section" id="why">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="why_eyebrow">Чому ми</span>
+        <h2 data-i18n="why_title">Переваги роботи з нами</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3.5 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="why_1_title">Працюємо 24/7</h3>
+          <p data-i18n="why_1_text">Без вихідних і свят — телефонуйте або пишіть у будь-який зручний час.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 17V7a2 2 0 0 1 2-2h8l6 6v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 5v5h6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="why_2_title">Великий вибір</h3>
+          <p data-i18n="why_2_text">Шини, диски та запчастини під найрізноманітніші марки й моделі авто.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v6c0 4.6 3.4 8.4 8 9 4.6-.6 8-4.4 8-9V6l-8-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="why_3_title">Точний підбір</h3>
+          <p data-i18n="why_3_text">Враховуємо марку, модель і параметри авто, щоб не помилитися з розміром.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3 data-i18n="why_4_title">Зберігання шин</h3>
+          <p data-i18n="why_4_text">Залиште сезонний комплект у нас — не потрібно шукати місце вдома.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="why_5_title">Швидкий зв'язок</h3>
+          <p data-i18n="why_5_text">Відповідаємо на дзвінки та повідомлення у Viber без довгого очікування.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.3-9C1.4 8.4 3 5 6.5 5 8.6 5 10.3 6.3 12 8c1.7-1.7 3.4-3 5.5-3 3.5 0 5.1 3.4 3.8 7-2.3 4.5-9.3 9-9.3 9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+          <h3 data-i18n="why_6_title">Чесні рекомендації</h3>
+          <p data-i18n="why_6_text">Пропонуємо варіанти під ваш бюджет, а не найдорожчі позиції.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ЯК МИ ПРАЦЮЄМО ===== -->
+  <section class="section section--alt process" id="process">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="proc_eyebrow">Процес</span>
+        <h2 data-i18n="proc_title">Як ми працюємо</h2>
+      </div>
+
+      <div class="process__steps">
+        <div class="process__step">
+          <div class="process__num">1</div>
+          <h3 data-i18n="proc_1_title">Зателефонуйте або напишіть</h3>
+          <p data-i18n="proc_1_text">Розкажіть, що потрібно: марка й модель авто, розмір шин чи дисків, потрібна запчастина.</p>
+        </div>
+        <div class="process__step">
+          <div class="process__num">2</div>
+          <h3 data-i18n="proc_2_title">Підберемо варіант</h3>
+          <p data-i18n="proc_2_text">Запропонуємо доступні варіанти шин, дисків або запчастин під ваш бюджет.</p>
+        </div>
+        <div class="process__step">
+          <div class="process__num">3</div>
+          <h3 data-i18n="proc_3_title">Заберіть замовлення</h3>
+          <p data-i18n="proc_3_text">Заберіть готове замовлення або домовтесь про сезонне зберігання комплекту шин.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ВІДГУКИ (заглушка — замінити на реальні відгуки) ===== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="rev_eyebrow">Відгуки</span>
+        <h2 data-i18n="rev_title">Що кажуть клієнти</h2>
+      </div>
+
+      <!-- TODO: тимчасові приклади, замінити на реальні відгуки клієнтів -->
+      <div class="grid grid--3">
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">★★★★★</div>
+          <p data-i18n="rev_1_text">«Швидко підібрали зимову резину за розміром, все було в наявності. Рекомендую!»</p>
+          <div class="review__footer">
+            <span class="review__avatar">ОК</span>
+            <div class="review__author" data-i18n="rev_1_author">Олександр К.</div>
+          </div>
+        </div>
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">★★★★★</div>
+          <p data-i18n="rev_2_text">«Залишала шини на зберігання на літо — все гаразд, зручно і не довелось шукати місце вдома.»</p>
+          <div class="review__footer">
+            <span class="review__avatar review__avatar--dark">МВ</span>
+            <div class="review__author" data-i18n="rev_2_author">Марина В.</div>
+          </div>
+        </div>
+        <div class="review">
+          <span class="review__quote">”</span>
+          <div class="review__stars">★★★★★</div>
+          <p data-i18n="rev_3_text">«Допомогли підібрати диски під автомобіль, привезли швидко, все за розміром.»</p>
+          <div class="review__footer">
+            <span class="review__avatar">ДП</span>
+            <div class="review__author" data-i18n="rev_3_author">Дмитро П.</div>
+          </div>
+        </div>
+      </div>
+      <p class="reviews__note" data-i18n="rev_note">Приклади відгуків буде замінено на реальні.</p>
+    </div>
+  </section>
+
+  <!-- ===== КОНТАКТИ ===== -->
+  <section class="section section--alt" id="contacts">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="contact_eyebrow">Контакти</span>
+        <h2 data-i18n="contact_title">Зв'яжіться з нами</h2>
+      </div>
+
+      <div class="contacts">
+        <div class="contacts__info">
+          <button type="button" class="contact-row contact-row--copy" id="copyPhoneBtn" data-copy-value="+380955525256">
+            <span class="contact-row__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="contact-row__label">
+              <b data-i18n="contact_phone_label">Телефон</b>
+              <span>+38 (095) 552-52-56</span>
+            </span>
+            <span class="contact-row__copy-hint" data-i18n="copied_hint">Скопійовано!</span>
+          </button>
+
+          <a href="viber://chat?number=%2B380955525256" class="contact-row">
+            <span class="contact-row__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>
+            </span>
+            <span class="contact-row__label">
+              <b>Viber</b>
+              <span data-i18n="contact_viber_value">Написати повідомлення</span>
+            </span>
+          </a>
+
+          <div class="contact-row contact-row--static">
+            <span class="contact-row__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3.5 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="contact-row__label">
+              <b data-i18n="contact_hours_label">Режим роботи</b>
+              <span data-i18n="contact_hours_value">Цілодобово, без вихідних</span>
+            </span>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=48.4083866,35.0354905" target="_blank" rel="noopener" class="contact-row">
+            <span class="contact-row__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-5.7-6.5-11A6.5 6.5 0 0 1 12 3.5 6.5 6.5 0 0 1 18.5 10c0 5.3-6.5 11-6.5 11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+            </span>
+            <span class="contact-row__label">
+              <b data-i18n="contact_address_label">Адреса</b>
+              <span data-i18n="contact_address_value">вул. Космічна, 49, Дніпро, 49000</span>
+            </span>
+          </a>
+
+          <form class="quick-form" id="quickForm">
+            <p class="quick-form__title" data-i18n="form_title">Залишити заявку у Viber</p>
+            <input type="text" id="qfName" data-i18n-placeholder="form_name" placeholder="Ваше ім'я" required>
+            <input type="tel" id="qfPhone" data-i18n-placeholder="form_phone" placeholder="Ваш телефон" required>
+            <textarea id="qfMsg" data-i18n-placeholder="form_msg" placeholder="Що потрібно підібрати? (шини, диски, запчастини...)" rows="3"></textarea>
+            <button type="submit" class="btn btn--viber btn--block">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>
+              <span data-i18n="form_submit">Надіслати у Viber</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=48.4083866,35.0354905&z=17&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Планета ШИН на карті"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== ФУТЕР ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="logo__text logo__text--light">Планета <b>ШИН</b></span>
+      <p data-i18n="footer_tagline">Шини, диски та автозапчастини для будь-якого автомобіля. Працюємо 24/7.</p>
+    </div>
+
+    <nav class="footer__nav">
+      <a href="#home" data-i18n="nav_home">Головна</a>
+      <a href="#about" data-i18n="nav_about">Про нас</a>
+      <a href="#services" data-i18n="nav_services">Послуги</a>
+      <a href="#why" data-i18n="nav_why">Переваги</a>
+      <a href="#process" data-i18n="nav_process">Як це працює</a>
+      <a href="#reviews" data-i18n="nav_reviews">Відгуки</a>
+      <a href="#contacts" data-i18n="nav_contacts">Контакти</a>
+    </nav>
+
+    <div class="footer__contacts">
+      <a href="tel:+380955525256">+38 (095) 552-52-56</a>
+      <a href="viber://chat?number=%2B380955525256">Viber</a>
+      <span data-i18n="contact_hours_value">Цілодобово, без вихідних</span>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <span>© <span id="year"></span> Планета ШИН. <span data-i18n="footer_rights">Всі права захищені.</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== ПЛАВАЮЧІ КНОПКИ ===== -->
+<div class="floating">
+  <button type="button" class="floating__btn floating__btn--top" id="scrollTopBtn" aria-label="Догори">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <a href="tel:+380955525256" class="floating__btn floating__btn--call" aria-label="Подзвонити">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  </a>
+  <a href="viber://chat?number=%2B380955525256" class="floating__btn floating__btn--viber" aria-label="Написати у Viber">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C9.473.028 5.333.344 3.02 2.467 1.302 4.187.696 6.7.633 9.817.57 12.933.488 18.776 6.12 20.36h.003l-.004 2.416s-.037.977.61 1.177c.777.242 1.234-.5 1.98-1.302.407-.44.972-1.084 1.397-1.58 3.85.326 6.812-.416 7.15-.525.776-.252 5.176-.816 5.892-6.657.74-6.02-.36-9.83-2.34-11.546-.596-.55-3.006-2.3-8.375-2.323 0 0-.395-.025-1.037-.017zm.058 1.693c.545-.004.88.017.88.017 4.542.02 6.717 1.388 7.222 1.846 1.675 1.435 2.53 4.868 1.906 9.897v.002c-.604 4.878-4.174 5.184-4.832 5.395-.28.09-2.882.737-6.153.524 0 0-2.436 2.94-3.197 3.704-.12.12-.26.167-.352.144-.13-.033-.166-.188-.165-.414l.02-4.018c-4.762-1.32-4.485-6.292-4.43-8.895.054-2.604.543-4.738 1.996-6.173 1.96-1.773 5.474-2.018 7.11-2.03zm.38 2.602c-.167 0-.303.135-.304.302 0 .167.133.303.3.305 1.624.01 2.946.537 4.028 1.592 1.073 1.046 1.62 2.468 1.633 4.334.002.167.14.3.307.3.166-.002.3-.138.3-.304-.014-1.984-.618-3.596-1.816-4.764-1.19-1.16-2.692-1.753-4.447-1.765zm-3.96.695c-.19-.032-.4.005-.616.117l-.01.002c-.43.247-.816.562-1.146.932-.002.004-.006.004-.008.008-.267.323-.42.638-.46.948-.008.046-.01.093-.007.14 0 .136.022.27.065.4l.013.01c.135.48.473 1.276 1.205 2.604.42.768.903 1.5 1.446 2.186.27.344.56.673.87.984l.132.132c.31.308.64.6.984.87.686.543 1.418 1.027 2.186 1.447 1.328.733 2.126 1.07 2.604 1.206l.01.014c.13.042.265.064.402.063.046.002.092 0 .138-.008.31-.036.627-.19.948-.46.004 0 .003-.002.008-.005.37-.33.683-.72.93-1.148l.003-.01c.225-.432.15-.842-.18-1.12-.004 0-.698-.58-1.037-.83-.36-.255-.73-.492-1.113-.71-.51-.285-1.032-.106-1.248.174l-.447.564c-.23.283-.657.246-.657.246-3.12-.796-3.955-3.955-3.955-3.955s-.037-.426.248-.656l.563-.448c.277-.215.456-.737.17-1.248-.217-.383-.454-.756-.71-1.115-.25-.34-.826-1.033-.83-1.035-.137-.165-.31-.265-.502-.297zm4.49.88c-.158.002-.29.124-.3.282-.01.167.115.312.282.324 1.16.085 2.017.466 2.645 1.15.63.688.93 1.524.906 2.57-.002.168.13.306.3.31.166.003.305-.13.31-.297.025-1.175-.334-2.193-1.067-2.994-.74-.81-1.777-1.253-3.05-1.346h-.024zm.463 1.63c-.16.002-.29.127-.3.287-.008.167.12.31.288.32.523.028.875.175 1.113.422.24.245.388.62.416 1.164.01.167.15.295.318.287.167-.008.295-.15.287-.317-.03-.644-.215-1.178-.58-1.557-.367-.378-.893-.574-1.52-.607h-.018z"/></svg>
+  </a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

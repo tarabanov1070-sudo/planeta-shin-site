@@ -81,8 +81,15 @@
   <!-- ===== ТОВАРИ ===== -->
   <section class="section">
     <div class="container">
-      <div class="grid grid--3">
-        <div class="product">
+      <div class="shop-filters" id="shopFilters">
+        <button type="button" class="shop-filter is-active" data-filter="all" data-i18n="filter_all">Всі</button>
+        <button type="button" class="shop-filter" data-filter="summer" data-i18n="filter_summer">Літні</button>
+        <button type="button" class="shop-filter" data-filter="winter" data-i18n="filter_winter">Зимові</button>
+        <button type="button" class="shop-filter" data-filter="allseason" data-i18n="filter_allseason">Всесезонні</button>
+      </div>
+
+      <div class="grid grid--3" id="shopGrid">
+        <div class="product" data-season="summer">
           <div class="product__photo">
             <span class="product__badge" data-i18n="shop_season_summer">Літня</span>
             <img src="img/pirelli-p-zero.jpg" alt="Pirelli P Zero (PZ4) 245/50 R19 105Y XL" loading="lazy">
@@ -107,6 +114,8 @@
           </div>
         </div>
       </div>
+
+      <p class="shop-empty" id="shopEmpty" data-i18n="shop_empty">У цій категорії поки немає товарів. Напишіть нам — можемо підібрати під замовлення.</p>
     </div>
   </section>
 

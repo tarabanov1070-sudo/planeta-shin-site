@@ -87,6 +87,32 @@ if (copyPhoneBtn) {
   });
 }
 
+// Фільтри товарів у магазині (за сезоном)
+const shopFilters = document.getElementById('shopFilters');
+if (shopFilters) {
+  const shopProducts = document.querySelectorAll('#shopGrid .product');
+  const shopEmpty = document.getElementById('shopEmpty');
+
+  shopFilters.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-filter]');
+    if (!btn) return;
+
+    shopFilters.querySelectorAll('[data-filter]').forEach((el) => {
+      el.classList.toggle('is-active', el === btn);
+    });
+
+    const filter = btn.dataset.filter;
+    let visibleCount = 0;
+    shopProducts.forEach((product) => {
+      const matches = filter === 'all' || product.dataset.season === filter;
+      product.style.display = matches ? '' : 'none';
+      if (matches) visibleCount += 1;
+    });
+
+    if (shopEmpty) shopEmpty.style.display = visibleCount ? 'none' : 'block';
+  });
+}
+
 // Стрічка категорій: набір з 8 позицій повторюємо кілька разів,
 // щоб на будь-якій ширині екрана стрічка ніколи не "закінчувалась" під час циклу.
 const TIRE_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.7"/></svg>';
@@ -165,6 +191,8 @@ const translations = {
     spec_reinforced: 'Підсилення', spec_studs: 'Шипи', spec_studs_no: 'Не шипована',
     shop_price: 'Ціна за запитом', shop_order: 'Замовити',
     shop_note: 'Асортимент постійно поповнюється — питайте про наявність потрібного розміру.',
+    filter_all: 'Всі', filter_summer: 'Літні', filter_winter: 'Зимові', filter_allseason: 'Всесезонні',
+    shop_empty: 'У цій категорії поки немає товарів. Напишіть нам — можемо підібрати під замовлення.',
     shop_inquiry_template: 'Доброго дня! Цікавить {product}, чи є в наявності?',
 
     why_eyebrow: 'Чому ми', why_title: 'Переваги роботи з нами',
@@ -246,6 +274,8 @@ const translations = {
     spec_reinforced: 'Усиление', spec_studs: 'Шипы', spec_studs_no: 'Нешипованная',
     shop_price: 'Цена по запросу', shop_order: 'Заказать',
     shop_note: 'Ассортимент постоянно пополняется — спрашивайте о наличии нужного размера.',
+    filter_all: 'Все', filter_summer: 'Летние', filter_winter: 'Зимние', filter_allseason: 'Всесезонные',
+    shop_empty: 'В этой категории пока нет товаров. Напишите нам — можем подобрать под заказ.',
     shop_inquiry_template: 'Здравствуйте! Интересует {product}, есть в наличии?',
 
     why_eyebrow: 'Почему мы', why_title: 'Преимущества работы с нами',

@@ -205,6 +205,8 @@ const translations = {
 
     meta_title: 'Планета ШИН — шини, диски та автозапчастини',
     meta_description: 'Планета ШИН — продаж шин, дисків та автозапчастин для будь-яких авто. Підбір під авто, сезонне зберігання шин. Працюємо 24/7.',
+    shop_meta_title: 'Магазин — Планета ШИН',
+    shop_meta_description: 'Каталог шин Планета ШИН — актуальна наявність, характеристики, замовлення через Viber.',
   },
   ru: {
     nav_home: 'Главная', nav_about: 'О нас', nav_services: 'Услуги', nav_why: 'Преимущества',
@@ -284,6 +286,8 @@ const translations = {
 
     meta_title: 'Планета ШИН — шины, диски и автозапчасти',
     meta_description: 'Планета ШИН — продажа шин, дисков и автозапчастей для любых авто. Подбор под авто, сезонное хранение шин. Работаем 24/7.',
+    shop_meta_title: 'Магазин — Планета ШИН',
+    shop_meta_description: 'Каталог шин Планета ШИН — актуальное наличие, характеристики, заказ через Viber.',
   },
 };
 
@@ -353,9 +357,11 @@ function applyLanguage(lang) {
     heroViberBtn.href = viberLink(dict.viber_hero_text);
   }
 
-  document.title = dict.meta_title;
-  if (metaDescriptionEl) metaDescriptionEl.setAttribute('content', dict.meta_description);
-  if (ogDescriptionEl) ogDescriptionEl.setAttribute('content', dict.meta_description);
+  const isShopPage = document.body.dataset.page === 'shop';
+  document.title = isShopPage ? dict.shop_meta_title : dict.meta_title;
+  const description = isShopPage ? dict.shop_meta_description : dict.meta_description;
+  if (metaDescriptionEl) metaDescriptionEl.setAttribute('content', description);
+  if (ogDescriptionEl) ogDescriptionEl.setAttribute('content', description);
 
   localStorage.setItem(LANG_STORAGE_KEY, lang);
 }
@@ -466,4 +472,4 @@ async function loadGoogleReviews() {
   }
 }
 
-loadGoogleReviews();
+if (document.getElementById('reviewsGrid')) loadGoogleReviews();

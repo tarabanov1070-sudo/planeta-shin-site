@@ -170,6 +170,8 @@ button { font-family: inherit; cursor: pointer; }
 }
 .nav__link:hover { color: var(--primary); }
 .nav__link:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav__link.is-current { color: var(--primary); }
+.nav__link.is-current::after { transform: scaleX(1); }
 
 .header__actions { display: flex; align-items: center; gap: 14px; }
 
@@ -471,6 +473,18 @@ button { font-family: inherit; cursor: pointer; }
 .card h3 { font-size: 19px; margin-bottom: 10px; color: var(--text); }
 .card p { color: var(--muted); font-size: 14.5px; }
 .card__link { display: inline-block; margin-top: 16px; font-weight: 700; font-size: 14px; color: var(--primary); }
+
+/* ===== Заголовок окремої сторінки (напр. Магазин) ===== */
+.page-hero { padding: calc(var(--header-h) + 56px) 0 36px; position: relative; }
+.page-hero__crumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: var(--muted);
+  margin-bottom: 16px;
+}
+.page-hero__crumb a { color: var(--primary); }
+.page-hero__crumb a:hover { text-decoration: underline; }
+.page-hero h1 { font-size: clamp(28px, 4vw, 42px); color: var(--text); letter-spacing: -0.01em; }
+.page-hero p { margin-top: 14px; color: var(--muted); font-size: 16px; max-width: 560px; }
 
 /* ===== Магазин (картки товарів) ===== */
 .product {

@@ -22,7 +22,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Поява секцій під час прокрутки
 const revealTargets = document.querySelectorAll(
-  '.card, .feature, .review, .process__step, .about__content, .about__art, .section__head'
+  '.card, .feature, .review, .product, .process__step, .about__content, .about__art, .section__head'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -158,6 +158,15 @@ const translations = {
     svc_4_title: 'Зберігання шин', svc_4_text: 'Сезонне зберігання комплекту шин на складі — здали і забули до наступного сезону.',
     svc_link: 'Уточнити наявність →',
 
+    nav_shop: 'Магазин',
+    shop_eyebrow: 'Магазин', shop_title: 'Шини в наявності',
+    shop_season_summer: 'Літня',
+    spec_year: 'Рік випуску', spec_load: 'Індекс навантаження', spec_speed: 'Індекс швидкості',
+    spec_reinforced: 'Підсилення', spec_studs: 'Шипи', spec_studs_no: 'Не шипована',
+    shop_price: 'Ціна за запитом', shop_order: 'Замовити',
+    shop_note: 'Асортимент постійно поповнюється — питайте про наявність потрібного розміру.',
+    shop_inquiry_template: 'Доброго дня! Цікавить {product}, чи є в наявності?',
+
     why_eyebrow: 'Чому ми', why_title: 'Переваги роботи з нами',
     why_1_title: 'Працюємо 24/7', why_1_text: 'Без вихідних і свят — телефонуйте або пишіть у будь-який зручний час.',
     why_2_title: 'Великий вибір', why_2_text: 'Шини, диски та запчастини під найрізноманітніші марки й моделі авто.',
@@ -228,6 +237,15 @@ const translations = {
     svc_4_title: 'Хранение шин', svc_4_text: 'Сезонное хранение комплекта шин на складе — сдали и забыли до следующего сезона.',
     svc_link: 'Уточнить наличие →',
 
+    nav_shop: 'Магазин',
+    shop_eyebrow: 'Магазин', shop_title: 'Шины в наличии',
+    shop_season_summer: 'Летняя',
+    spec_year: 'Год выпуска', spec_load: 'Индекс нагрузки', spec_speed: 'Индекс скорости',
+    spec_reinforced: 'Усиление', spec_studs: 'Шипы', spec_studs_no: 'Нешипованная',
+    shop_price: 'Цена по запросу', shop_order: 'Заказать',
+    shop_note: 'Ассортимент постоянно пополняется — спрашивайте о наличии нужного размера.',
+    shop_inquiry_template: 'Здравствуйте! Интересует {product}, есть в наличии?',
+
     why_eyebrow: 'Почему мы', why_title: 'Преимущества работы с нами',
     why_1_title: 'Работаем 24/7', why_1_text: 'Без выходных и праздников — звоните или пишите в любое удобное время.',
     why_2_title: 'Большой выбор', why_2_text: 'Шины, диски и запчасти под самые разные марки и модели авто.',
@@ -293,6 +311,13 @@ function renderReviewsNote(dict) {
     .replace('{count}', reviewStats.count);
 }
 
+function updateProductViberLinks(dict) {
+  document.querySelectorAll('[data-viber-product]').forEach((el) => {
+    const text = dict.shop_inquiry_template.replace('{product}', el.dataset.viberProduct);
+    el.href = viberLink(text);
+  });
+}
+
 function applyLanguage(lang) {
   const dict = translations[lang] || translations.uk;
   currentLang = lang;
@@ -307,6 +332,7 @@ function applyLanguage(lang) {
     if (dict[key] !== undefined) el.textContent = dict[key];
   });
   renderReviewsNote(dict);
+  updateProductViberLinks(dict);
 
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.dataset.i18nPlaceholder;
